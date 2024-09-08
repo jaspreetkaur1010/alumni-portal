@@ -5,7 +5,7 @@ import HomePage from './Pages/HomePage';
 import MessagePortal from './Pages/MessagePortal';
 import UserProfile from './Pages/UserProfie';
 import Network from './Pages/Network';
-import { userDemo } from './constants';
+import SignUpPage from './Pages/SignUpPage';
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <Route path="/message" element={<MessagePortal />} />
       <Route path="/userprofile" element={<UserProfile  />} />
       <Route path="/network" element={<Network/>} />
+      <Route path="/signup" element={<SignUpPage/>} />
     </Routes>
 
   )

@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { ArrowUpIcon, ArrowDownIcon, MessageSquare, Share2, BookmarkIcon, MoreHorizontal, Bell } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Link } from "react-router-dom"; // Import from react-router-dom instead of next/link
 import Post from "@/components/post/Post";
 import CreatePost from "@/components/createPost/CreatePost";
@@ -10,9 +7,10 @@ import Navigation from "@/components/navigation/Navigation";
 
 export default function Component() {
   return (
-    <div className="min-h-screen p-4 bg-background">
-      <Navigation />
-      <main className="container mx-auto flex flex-col lg:flex-row gap-6 py-8">
+  <>
+  <Navigation />
+    <div className="min-h-screen px-4 bg-background">
+      <main className="container mx-auto flex flex-col lg:flex-row gap-6 py-6">
         <div className = "gap-6 flex flex-col lg:w-2/3">
         <CreatePost />
         <Post />
@@ -57,5 +55,6 @@ export default function Component() {
         </div>
       </main>
     </div>
+    </>
   );
 }

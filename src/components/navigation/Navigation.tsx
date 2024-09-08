@@ -7,7 +7,7 @@ import logo from "../../assets/logo.png";
 
 const Navigation = () => {
   return (
-    <header className="border-b">
+    <header className="border-b px-4 py-1">
         <div className="container mx-auto flex items-center justify-between py-4 flex-col lg:flex-row space-y-4 lg:space-y-0">
           <div className="flex items-center space-x-4">
             {/* Replace Next.js Link with React Router Link */}
@@ -15,8 +15,12 @@ const Navigation = () => {
             <Input className="w-full sm:w-64" placeholder="Search AlumniConnect" type="search" />
           </div>
           <nav className="flex items-center space-x-2 flex-wrap justify-center">
-            <Button variant="ghost">Home</Button>
-            <Button variant="ghost">Network</Button>
+            <Link to="/">
+              <Button variant="ghost">Home</Button>
+            </Link>
+            <Link to="/network">
+              <Button variant="ghost">Network</Button>
+            </Link>
             <Button variant="ghost">Events</Button>
             <Button variant="ghost">Jobs</Button>
             <Button variant="ghost">Referrals</Button>
@@ -32,10 +36,12 @@ const Navigation = () => {
             <Button size="icon" variant="ghost">
               <Bell className="h-5 w-5" />
             </Button>
-            <Avatar>
-              <AvatarImage src="/placeholder-user.jpg" alt="@username" />
-              <AvatarFallback>UN</AvatarFallback>
-            </Avatar>
+            <Link to={"/userprofile"}>
+              <Avatar className='p-2 bg-gray-100 rounded-full'>
+                <AvatarImage src="/placeholder-user.jpg" alt="@username" />
+                <AvatarFallback>UN</AvatarFallback>
+              </Avatar>
+            </Link>
           </div>
         </div>
       </header>

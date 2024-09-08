@@ -5,6 +5,8 @@ import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
+import logo from "../assets/logo.png"
+import { Link } from 'react-router-dom'
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>('')
@@ -31,16 +33,16 @@ const LoginPage: React.FC = () => {
   }
 
   return (
-    <div className="md:flex bg-black">
-        <div className='w-1/2 hidden md:flex h-screen'>
+    <div className="md:flex">
+        <div className='w-1/2 hidden md:flex items-center justify-center h-screen'>
             <img 
-            src="https://images.unsplash.com/photo-1605478328994-f93e98217da7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBhYnN0cmFjdCUyMGFydHxlbnwwfHwwfHx8MA%3D%3D"
-            className='w-full h-full object-cover'
+            src={logo}
+            className='size-3/4 object-contain'
             ></img>
 
         </div>
 
-        <div className=' h-screen md:w-1/2 flex justify-center items-center'>
+        <div className=' h-screen md:w-1/2 flex justify-start items-center'>
         <Card className="w-3/4  h-96  max-w-md">
         <CardHeader>
           <CardTitle className='text-2xl text-center'>Login</CardTitle>
@@ -92,9 +94,11 @@ const LoginPage: React.FC = () => {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full">
-              Log in
-            </Button>
+            <Link to="/">
+              <Button type="submit" className="w-full">
+                Log in
+              </Button>
+            </Link>
             <div className="text-sm text-center text-gray-500">
               Don't have an account?{" "}
               <a href="/signup" className="text-primary hover:underline">
