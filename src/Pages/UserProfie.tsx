@@ -1,14 +1,54 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, MapPin, Briefcase, GraduationCap, Mail, Link as LinkIcon, MessageSquare, UserPlus, Share2 } from "lucide-react";
+import { Calendar, MapPin, Briefcase, GraduationCap, Mail, Link as LinkIcon, MessageSquare, UserPlus, Share2, Bell } from "lucide-react";
 import { Link } from "react-router-dom"; // Use react-router-dom's Link
 
 export default function UserProfile() {
-  return (
+  return (<>
+    <div className='px-4'>
+      <header className="border-b">
+          <div className="container mx-auto flex items-center justify-between py-4 flex-col lg:flex-row space-y-4 lg:space-y-0">
+            <div className="flex items-center space-x-4">
+              <Link to="/" className="text-2xl font-bold">AlumniConnect</Link>
+              <Input className="w-full sm:w-64" placeholder="Search AlumniConnect" type="search" />
+            </div>
+            <nav className="flex items-center space-x-2 flex-wrap justify-center">
+              <Link to={"/"}>
+                <Button variant="ghost">Home</Button>
+              </Link>
+              <Link to={"/network"}>
+                <Button variant="ghost">Network</Button>
+              </Link>
+              <Button variant="ghost">Events</Button>
+              <Button variant="ghost">Jobs</Button>
+              <Button variant="ghost">Referrals</Button>
+              <Button variant="ghost">Companies</Button>
+              <Button variant="ghost">Projects</Button>
+            </nav>
+            <div className="flex items-center space-x-4">
+              <Link to="/message">
+                <Button className="ml-2" variant="ghost">
+                  <MessageSquare className="h-5 w-5" />
+                </Button>
+              </Link>
+              <Button size="icon" variant="ghost">
+                <Bell className="h-5 w-5" />
+              </Button>
+              <Link to={"/userprofile"}>
+              <Avatar>
+                <AvatarImage src="/placeholder-user.jpg" alt="@username" />
+                <AvatarFallback>UN</AvatarFallback>
+              </Avatar>
+            </Link>
+            </div>
+          </div>
+        </header>
+    </div>
     <div className="container px-6 mx-auto py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-1">
@@ -265,5 +305,6 @@ export default function UserProfile() {
         </div>
       </div>
     </div>
+    </>
   )
 }

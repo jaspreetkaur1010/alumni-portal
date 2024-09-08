@@ -2,7 +2,8 @@ import { useState, ChangeEvent } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { MessageCircle, Search } from "lucide-react";
+import { MessageCircle, Search,Bell,MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Message {
   text: string;
@@ -32,7 +33,47 @@ const MessagePortal: React.FC = () => {
   };
 
   return (
+  <div>      
+    <header className="px-4 border-b">
+    <div className="container mx-auto flex items-center justify-between py-4 flex-col lg:flex-row space-y-4 lg:space-y-0">
+      <div className="flex items-center space-x-4">
+        {/* Replace Next.js Link with React Router Link */}
+        <Link to="/" className="text-2xl font-bold">AlumniConnect</Link>
+        <Input className="w-full sm:w-64" placeholder="Search AlumniConnect" type="search" />
+      </div>
+      <nav className="flex items-center space-x-2 flex-wrap justify-center">
+        <Link to={"/"}>
+            <Button variant="ghost">Home</Button>
+        </Link>
+        <Link to={"/network"}>
+          <Button variant="ghost">Network</Button>
+        </Link>
+        <Button variant="ghost">Events</Button>
+        <Button variant="ghost">Jobs</Button>
+        <Button variant="ghost">Referrals</Button>
+        <Button variant="ghost">Companies</Button>
+        <Button variant="ghost">Projects</Button>
+      </nav>
+      <div className="flex items-center space-x-4">
+        <Link to="/message">
+          <Button className="ml-2" variant="ghost">
+            <MessageSquare className="h-5 w-5" />
+          </Button>
+        </Link>
+        <Button size="icon" variant="ghost">
+          <Bell className="h-5 w-5" />
+        </Button>
+        <Link to={"/userprofile"}>
+              <Avatar>
+                <AvatarImage src="/placeholder-user.jpg" alt="@username" />
+                <AvatarFallback>UN</AvatarFallback>
+              </Avatar>
+            </Link>
+      </div>
+    </div>
+  </header>
     <div className="flex h-screen">
+
       {/* Sidebar */}
       <div className="w-1/4 bg-gray-100 p-4 border-r">
         <div className="flex items-center mb-4">
@@ -112,6 +153,7 @@ const MessagePortal: React.FC = () => {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 };
