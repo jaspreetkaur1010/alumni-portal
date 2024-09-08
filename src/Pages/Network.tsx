@@ -162,12 +162,10 @@
                             Message
                           </Button>
                         </Link>
-                        <Link to={`/userprofile`} className="no-underline">
-                          <Button size="sm" variant="outline">
-                            <UserPlus className="h-4 w-4 mr-2" />
-                            Connect
-                          </Button>
-                        </Link>
+                        <Button size="sm" variant="outline">
+                          <UserPlus className="h-4 w-4 mr-2" />
+                          Connect
+                        </Button>
                       </div>
                     </div>
                   ))}

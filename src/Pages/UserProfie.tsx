@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {  MapPin, Briefcase, Mail, Link as LinkIcon, MessageSquare, UserPlus, Share2, Bell } from "lucide-react";
+import {  MapPin, Briefcase, Mail, Link as LinkIcon, MessageSquare, UserPlus, Share2 } from "lucide-react";
 import Navigation from "@/components/navigation/Navigation";
 
 export default function UserProfile() {
